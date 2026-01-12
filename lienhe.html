@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Liên hệ | Du lịch Vũng Tàu</title>
+  <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <img class="logo-img" src="images/Artboard 1.png" alt="Logo Du lịch Vũng Tàu"/>
+    <h3>Du lịch Vũng Tàu</h3>
+    </div>
+  <nav class="menu">
+    <a href="index.html">Trang chủ</a>
+    <a href="diem_den.html">Điểm đến</a>
+    <a href="kinhnghiem.html">Kinh nghiệm</a>
+    <a href="lichtrinh.html">Lịch trình</a>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html" class="cta">Liên hệ</a>
+    <a href="dangnhap.html" class="cta">ĐĂNG NHẬP</a>
+  </nav>
+</header>
+<section class="contact">
+    <br>
+    <br>
+  <h2>Liên hệ với chúng tôi</h2>
+  <p>Gửi thông tin để được tư vấn chuyến đi tốt nhất</p>
+    <br>
+
+  <div class="contact-box">
+    <!-- Thông tin -->
+    <div class="contact-info">
+      <h3>Thông tin</h3>
+      <p>📍 Vũng Tàu, Việt Nam</p>
+      <p>📞 0909 123 456</p>
+      <p>✉️ dulich@travel.vn</p>
+    </div>
+
+    <!-- Form -->
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="Họ và tên">
+      <input type="email" id="email" placeholder="Email">
+      <textarea id="message" placeholder="Nội dung liên hệ"></textarea>
+      <button type="submit">Gửi liên hệ</button>
+      <p id="result"></p>
+    </form>
+  </div>
+</section>
+<style>
+	
+	body {
+  font-family: Arial, sans-serif;
+  background: #f2f6fa;
+}
+
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  color: #0077b6;
+}
+
+.desc {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact-box {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #023e8a;
+}
+
+#result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-box {
+    flex-direction: column;
+  }
+}
+	
+	</style>
+<script src="script.js"></script>
+	<script>
+	
+		const form = document.getElementById("contactForm");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (name === "" || email === "" || message === "") {
+    result.style.color = "red";
+    result.textContent = "⚠️ Vui lòng nhập đầy đủ thông tin!";
+    return;
+  }
+
+  if (!email.includes("@")) {
+    result.style.color = "red";
+    result.textContent = "⚠️ Email không hợp lệ!";
+    return;
+  }
+
+  result.style.color = "green";
+  result.textContent = "✅ Gửi liên hệ thành công! Chúng tôi sẽ phản hồi sớm.";
+
+  form.reset();
+});
+	
+	</script>
+</body>
+</html>
